@@ -74,10 +74,10 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'mysql:host=localhost;port=3306;dbname=carbontales',
-	'hostname' => '127.0.0.1',
-	'username' => 'root',
-	'password' => 'root',
+	'dsn'	=> '',
+	'hostname' => 'localhost',
+	'username' => 'sagoyal',
+	'password' => 'r#m8Huc?[6KE',
 	'database' => 'carbontales',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
