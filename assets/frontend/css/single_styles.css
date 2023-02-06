@@ -1,0 +1,1537 @@
+@charset "utf-8";
+/* CSS Document */
+
+/******************************
+
+COLOR PALETTE
+
+
+
+[Table of Contents]
+
+1. Fonts
+2. Body and some general stuff
+3. Home
+	3.1 Currency
+	3.2 Language
+	3.3 Account
+	3.4 Main Navigation
+	3.5 Hamburger Menu
+	3.6 Logo
+4. Breadcrumbs
+5. Single Product Section
+6. Product Details
+7. Tabs
+	7.1 Description
+	7.2. Additional Info
+	7.3 Reviews
+8. Add Review
+9. Benefit
+10. Newsletter
+11. Footer
+
+
+******************************/
+
+/***********
+1. Fonts
+***********/
+
+/*********************************
+2. Body and some general stuff
+*********************************/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 0px;
+}
+.red_button {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 40px;
+  background: #dd99ff;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.red_button:hover {
+  background: #dd99ff !important;
+}
+.red_button a {
+  display: block;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 40px;
+  width: 100%;
+}
+.shop_now_button {
+  width: 140px;
+  margin-top: 32px;
+}
+
+/*********************************
+5. Single Product Section
+*********************************/
+
+.single_product_container {
+  border-bottom: solid 1px #ebebeb;
+  margin-top: 100px;
+}
+.single_product_thumbnails {
+  height: 527px;
+}
+.single_product_thumbnails ul li {
+  position: relative;
+  height: 136px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.single_product_thumbnails ul li::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* border: solid 1px #dd99ff; */
+  content: "";
+  visibility: hidden;
+}
+.single_product_thumbnails ul li.active::after,
+.single_product_thumbnails ul li:hover::after {
+  visibility: visible;
+}
+.single_product_thumbnails ul li img {
+  width: 100%;
+  height: 100%;
+}
+.image_col {
+  padding-right: 30px;
+  display: block;
+  position: relative;
+}
+.single_product_image {
+  width: 100%;
+  height: 527px;
+  display: block;
+  position: relative;
+}
+.single_product_image_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/*********************************
+6. Product Details
+*********************************/
+
+.product_details {
+  width: 100%;
+}
+.product_details_title {
+  font-weight: 500px;
+  line-height: 30px;
+}
+.product_details_title p {
+  margin-top: 12px;
+}
+.free_delivery {
+  background: #f5f5f5;
+  margin-top: 53px;
+  justify-content: space-around;
+  /* word-wrap: break-word; */
+}
+.free_delivery i {
+  display: inline-block;
+}
+.free_delivery span {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  /* text-transform: uppercase; */
+}
+.free_delivery span {
+  display: inline-block;
+  /* margin-right: 19px; */
+  font-size: 16px;
+  -webkit-transform: translateY(-1px);
+  -moz-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  -o-transform: translateY(-1px);
+  transform: translateY(-1px);
+}
+.original_price {
+  font-weight: 500;
+  color: #b9b4c7;
+  text-decoration: line-through;
+  line-height: 30px;
+  margin-top: 21px;
+}
+.product_price {
+  display: inline-block;
+  font-size: 24px;
+  color: #660066;
+  font-weight: 500;
+  line-height: 30px;
+  margin-top: 2px;
+}
+.price-sign {
+  color: #330033;
+  font-size: smaller;
+}
+.star_rating {
+  display: inline-block;
+  margin-left: 33px;
+}
+.star_rating li {
+  display: inline-block;
+  margin-right: -2px;
+  cursor: pointer;
+}
+.star_rating li i {
+  color: #fac451;
+}
+.product_color {
+  margin-top: 27px;
+}
+.product_color ul {
+  display: inline-block;
+  margin-left: 26px;
+}
+.product_color ul li {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 29px;
+  cursor: pointer;
+}
+.quantity {
+  width: 100%;
+  height: 40px;
+  margin-top: 23px;
+}
+.quantity_selector {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 132px;
+  height: 100%;
+  border: solid 1px #e5e5e5;
+  margin-left: 10px;
+}
+.quantity_selector span {
+  font-weight: 500;
+  color: #232530;
+}
+.plus,
+.minus {
+  padding-left: 14px;
+  padding-right: 14px;
+  cursor: pointer;
+}
+.plus:hover,
+.minus:hover {
+  color: #b5aec4;
+}
+.add_to_cart_button {
+  width: 160px;
+  /* margin-left: 19px; */
+  font-size: 12px !important;
+}
+.product_favorite {
+  width: 40px;
+  height: 100%;
+  margin-left: 22px;
+  border: solid 1px #e5e5e5;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.product_favorite:hover::after {
+  color: #dd99ff;
+}
+.product_favorite::after {
+  content: "\f08a";
+  font-size: 14px;
+}
+.product_favorite.active::after {
+  content: "\f004";
+  color: #dd99ff;
+}
+
+/*********************************
+7. Tabs
+*********************************/
+
+.tabs_section_container {
+  width: 100%;
+  padding-bottom: 80px;
+  border-bottom: solid 1px #ebebeb;
+}
+.tabs_container {
+  margin-top: 66px;
+  margin-bottom: 66px;
+}
+.tab {
+  margin-right: 50px;
+  cursor: pointer;
+}
+.tab:last-child {
+  margin-right: 0px;
+}
+.tab span {
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1e1e27;
+}
+.tab:hover span {
+  color: #b5aec4;
+}
+.tab.active span {
+  color: #dd99ff;
+  border-bottom: solid 1px #dd99ff;
+}
+.tab_container {
+  width: 100%;
+  display: none;
+}
+.tab_container.active {
+  display: block;
+}
+
+/*********************************
+7.1 Description
+*********************************/
+
+.desc_col {
+}
+.tab_title {
+  margin-bottom: 98px;
+}
+.tab_title h4 {
+  display: inline-block;
+  color: #dd99ff;
+  border-bottom: solid 1px #dd99ff;
+}
+.tab_text_block {
+  margin-bottom: 133px;
+}
+.tab_text_block p {
+  font-weight: 400;
+  margin-top: 10px;
+}
+.tab_image {
+  width: 100%;
+  margin-bottom: 131px;
+}
+.tab_image img {
+  width: 100%;
+}
+.desc_last {
+  margin-bottom: 0px;
+}
+
+/*********************************
+7.2. Additional Info
+*********************************/
+
+.additional_info_col p span {
+  margin-left: 22px;
+}
+.additional_info_title {
+  margin-bottom: 48px;
+}
+
+/*********************************
+7.3 Reviews
+*********************************/
+
+.reviews_title {
+  margin-bottom: 58px;
+}
+.user_review_container {
+  width: 100%;
+  margin-bottom: 37px;
+}
+.reviews_col {
+  padding-right: 30px;
+}
+.user_pic {
+  width: 70px;
+  height: 70px;
+  background: #ebebeb;
+  border-radius: 50%;
+}
+.user_rating .star_rating {
+  margin-left: 5px;
+  margin-top: 13px;
+}
+.user_rating .star_rating li {
+  margin-right: -3px;
+}
+.user_rating .star_rating li i {
+  font-size: 12px;
+}
+.review {
+  padding-left: 30px;
+}
+.review_date {
+  color: #dd99ff;
+  margin-top: -4px;
+}
+.user_name {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+.review p {
+  font-weight: 400;
+}
+
+/*********************************
+8. Add Review
+*********************************/
+
+.add_review {
+  margin-top: 94px;
+}
+#review_form > div {
+  margin-bottom: 40px;
+}
+#review_form div:nth-child(2) h1 {
+  display: inline-block;
+}
+#review_form div:nth-child(2) {
+  margin-bottom: 20px;
+}
+#review_form > div:last-child {
+  margin-bottom: 0px;
+}
+.add_review h1 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.form_input {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: solid 1px #e5e5e5;
+  padding-left: 20px;
+}
+.input_name {
+  margin-bottom: 19px;
+  margin-top: 31px;
+}
+.input_review {
+  display: block;
+  width: 100%;
+  border: solid 1px #e5e5e5;
+  margin-top: 23px;
+  padding-left: 20px;
+  padding-top: 13px;
+}
+.user_star_rating {
+  display: inline-block;
+  margin-left: 18px;
+}
+.user_star_rating li {
+  display: inline-block;
+  margin-right: -3px;
+  cursor: pointer;
+}
+.user_star_rating li i {
+  color: #f5c136;
+  font-size: 18px;
+}
+.review_submit_btn {
+  width: 170px;
+  border: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.productdescription {
+  color: #dd99ff;
+  font-family: Century Gothic;
+  font-size: 15px;
+}
+.quantity-text {
+  font-size: 18px;
+}
+.c-text {
+  font-family: Century Gothic !important;
+  font-size: 21px !important;
+  color: white;
+}
+.c-desc {
+  text-align: justify;
+  font-family: Century Gothic;
+}
+.igi-container {
+  display: inline-flex;
+  margin-top: -15px;
+}
+.igi-logo {
+  height: 50px;
+  width: 50px;
+  margin-right: 40px;
+}
+.hallmark-logo {
+  height: 50px;
+  width: 50px;
+}
+.product-name {
+  font-family: Century Gothic;
+  font-size: 25px;
+}
+.easy-return {
+  margin-left: -55px;
+  /* margin-right: 10px !important; */
+}
+.free-delivery {
+  margin-left: -55px;
+}
+.certificate-text {
+  margin-left: -55px;
+}
+.product-list {
+  margin-bottom: -10px !important;
+}
+.single_product_image_background_cart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.quantity_selector_cart {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+  height: 100%;
+  border: solid 1px #e5e5e5;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.nav-text {
+  font-size: 15px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .free_delivery_mobile {
+    justify-content: space-around;
+  }
+  .easy-return {
+    margin-left: -10px;
+    /* margin-right: 10px !important; */
+  }
+  .free-delivery {
+    margin-left: -10px;
+  }
+  .certificate-text {
+    margin-left: -10px;
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  
+  .home-own-head .mobile-h1{
+    font-size: 30px;
+  }
+  .home-own-head .own-link{
+    font-size: 45px;
+  }
+  .home-own-head .own-magic{
+    font-size: 30px;
+  }
+  .home-own-head .btm-head{
+    height: 600px;
+  }
+  .home-own-head .btm-text{
+    font-size: 20px;
+  }
+}
+/**********
+  iPad 3
+  **********/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* iPhone 5 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) /* and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) */ {
+  /* Styles */
+  .logo-text {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner .btn {
+    font-size: 12px;
+  }
+  .slider-font {
+    font-size: 11px;
+  }
+  .shop-now-cls {
+    margin-bottom: 0px;
+  }
+  .slider-height {
+    height: 568px;
+  }
+  .product-grid-home {
+    height: 240px;
+  }
+  .mobile-h1 {
+    font-size: 12px;
+  }
+  .own-link {
+    font-size: 22px;
+  }
+  .own-magic {
+    font-size: 12px;
+  }
+  .home-own-head .btm-head {
+    position: relative;
+    height: 172px;
+  }
+  .btm-text {
+    font-size: 11px;
+  }
+}
+/* nokia lumia */
+@media only screen and (min-device-width: 320px) and (max-device-width: 533px) {
+/*  .fh5co-nav-toggle {
+    top: 7px;
+  }*/
+  .fh5co-nav {
+    padding: 10px 0;
+  }
+  .fh5co-nav a {
+    padding: 0px;
+  }
+  .logo-style {
+    padding-left: 0px;
+  }
+  .text-center-mobile {
+    text-align: center;
+  }
+  .inside-gift-container {
+    margin-top: 8em;
+    padding: 0px;
+  }
+  .head-size {
+    font-size: 14px;
+    text-align: center;
+  }
+  .desc-gift {
+    padding: 0px 20px 0px 14px;
+    font-size: 10px;
+  }
+  .logo-style {
+    /* margin-top: -23px;
+    margin-bottom: -30px; */
+  }
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner .desc {
+    padding: 10px 10px 10px 10px
+  }
+  .slider-height {
+    height: 534px;
+  }
+  .product-grid-home {
+    height: 200px;
+  }
+  #fh5co-counter .feature-center {
+    padding: 0px;
+    background: unset;
+  }
+  #fh5co-counter .counter-label {
+    text-decoration-thickness: from-font;
+    text-decoration: underline;
+  }
+  .fix-image {
+    width: 100%;
+    height: 350px;
+  }
+  .slider1 {
+    height: 94px;
+    margin-top: 153px;
+    width: 76px;
+    margin-left: 103px;
+    position: absolute;
+    display: block;
+  }
+  .slider2 {
+    height: 94px;
+    margin-top: 245px;
+    width: 76px;
+    margin-left: 103px;
+    position: absolute;
+    display: block;
+  }
+  .product-grid {
+    height: 200px;
+    margin-bottom: 5px !important;
+  }
+  .product-desc h3 {
+    font-size: 14px !important;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* iPhone 6, 7, 8 ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+  .inside-gift-container {
+    margin-top: 10.5em;
+    padding: 0px;
+  }
+  .head-size {
+    font-size: 16px;
+    text-align: center;
+  }
+  .desc-gift {
+    padding: 0px 20px 0px 14px;
+    font-size: 11px;
+  }
+/*  .fh5co-nav-toggle {
+    top: 7px;
+  }*/
+  .fh5co-nav a {
+    padding: 0px;
+  }
+  .logo-style {
+    padding-left: 0px;
+    /* margin-top: -8px;
+    margin-bottom: -12px; */
+  }
+/*  .text-center-mobile {
+    top: 9px;
+  }*/
+  .fh5co-nav {
+    padding: 10px 0;
+  }
+  .fix-image {
+    width: 100%;
+    height: 450px;
+  }
+  .slider1 {
+    height: 94px;
+    margin-top: 202px;
+    width: 76px;
+    margin-left: 132px;
+    position: absolute;
+    display: block;
+  }
+  .slider2 {
+    height: 94px;
+    margin-top: 321px;
+    width: 76px;
+    margin-left: 131px;
+    position: absolute;
+    display: block;
+  }
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner .desc{
+    padding: 10px 10px 0px 10px;
+  }
+  .mobile-h1{
+    font-size: 16px;
+  }
+  .own-link{
+    font-size: 24px;
+  }
+  .own-magic{
+    font-size: 16px;
+  }
+  .btm-head{
+    height: 210px;
+  }
+  .btm-text{
+    font-size: 12px;
+  }
+}
+
+/* iPhone 6+, 7+, 8+ ----------- */
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* nokia n9 */
+@media only screen and (min-device-width: 480px) and (max-device-height: 854px) /* and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) */ {
+  .btm-head {
+    position: relative;
+    height: 350px;
+  }
+  .btm-text {
+    font-size: 16px;
+  }
+  .own-magic {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  .own-link {
+    font-size: 27px;
+    letter-spacing: 0px;
+    margin-top: 20px;
+  }
+  .mobile-h1 {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner .desc {
+    padding: 20px 20px 0px 20px;
+  }
+  .inside-gift-container {
+    margin-top: 12em;
+    padding: 0px;
+  }
+  .head-size {
+    font-size: 20px;
+    text-align: center;
+  }
+  .desc-gift {
+    padding: 0px 20px 0px 14px;
+    font-size: 14px;
+  }
+/*  .fh5co-nav-toggle {
+    top: 10px;
+  }*/
+  .fh5co-nav {
+    padding: 10px 0;
+  }
+  .fh5co-nav a {
+    padding: 0px;
+  }
+  .logo-style {
+    padding-left: 0px;
+    /* margin-top: -17px; */
+  }
+  .text-center-mobile {
+    text-align: center;
+  }
+  .product-grid-home {
+    height: 270px;
+  }
+  .product-grid{
+    height: 250px;
+    margin-bottom: 10px !important;
+  }
+  .desc{
+    font-size: 12px !important;
+  }
+  .desc h3{
+    font-size: 12px !important;
+  }
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) {
+  /* Styles */
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner .desc{
+    padding: 10px 10px 0px 10px;
+  }
+}
+
+/* iPhone X ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+  .inside-gift-container {
+    margin-top: 10.5em;
+    padding: 0px;
+  }
+  .head-size {
+    font-size: 16px;
+    text-align: center;
+  }
+  .desc-gift {
+    padding: 0px 20px 0px 14px;
+    font-size: 11px;
+  }
+  .fh5co-nav-toggle {
+    top: 7px;
+  }
+  .fh5co-nav a {
+    padding: 0px;
+  }
+  .logo-style {
+    padding-left: 0px;
+    /* margin-top: -8px;
+    margin-bottom: -12px; */
+  }
+  .text-center-mobile {
+    top: 9px;
+  }
+  .fh5co-nav {
+    padding: 10px 0;
+  }
+  .fix-image {
+    width: 100%;
+    height: 450px;
+  }
+  .slider1 {
+    height: 94px;
+    margin-top: 202px;
+    width: 76px;
+    margin-left: 132px;
+    position: absolute;
+    display: block;
+  }
+  .slider2 {
+    height: 94px;
+    margin-top: 321px;
+    width: 76px;
+    margin-left: 131px;
+    position: absolute;
+    display: block;
+  }
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner .desc{
+    /* height: 200px; */
+  }
+  .mobile-h1{
+    font-size: 16px;
+  }
+  .own-link{
+    font-size: 24px;
+  }
+  .own-magic{
+    font-size: 16px;
+  }
+  .btm-head{
+    height: 210px;
+  }
+  .btm-text{
+    font-size: 12px;
+  }
+}
+
+/* iPhone XS Max, XR ----------- */
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
+
+/* Samsung Galaxy S3 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) /* and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) */ {
+  /* Styles */
+  .btm-head {
+    position: relative;
+    height: 236px;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* Samsung Galaxy S4 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+  /* .btm-head{
+    position:relative; 
+    min-height: 225px;
+  } */
+}
+
+/* Samsung Galaxy S5 ----------- */
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) /* and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) */ {
+  .mobile-h1 {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+  .own-link {
+    font-size: 27px;
+    letter-spacing: 0px;
+    margin-top: 20px;
+  }
+  .btm-text {
+    font-size: 13px;
+    /* margin-top: 190px; */
+  }
+  .own-magic {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner .desc {
+    /* height: 250px; */
+  }
+  .product-grid-home {
+    height: 230px;
+    margin-bottom: 10px;
+  }
+  #fh5co-counter{
+    padding: 4em 0;
+  }
+  #fh5co-counter .feature-center {
+    padding: 0px;
+    background: none;
+  }
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner .btn {
+    font-size: 12px;
+  }
+  .slider-font {
+    text-align: justify;
+    letter-spacing: 0.6px;
+    font-size: 12px;
+  }
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner .desc {
+    padding: 10px 10px 0px 10px;
+  }
+  .text-center-mobile {
+    text-align: center;
+  }
+  .fh5co-nav {
+    padding: 10px 0;
+    /* height: 60px; */
+  }
+  .product_container {
+    padding: 12px ​0px 10px 0px;
+  }
+  .inside-gift-container {
+    margin-top: 8.2em;
+    padding: 0px;
+  }
+  .head-size {
+    font-size: 16px;
+    text-align: center;
+  }
+  .desc-gift {
+    padding: 0px 20px 0px 14px;
+    font-size: 11px;
+  }
+/*  .fh5co-nav-toggle {
+    top: 5px;
+  }*/
+  .fh5co-nav a {
+    padding: 0px;
+  }
+  .logo-style {
+    padding-left: 0px;
+    /* margin-top: -17px; */
+  }
+  .fix-image {
+    width: 100%;
+    height: 400px;
+  }
+  .slider1 {
+    height: 94px;
+    margin-top: 177px;
+    width: 76px;
+    margin-left: 126px;
+    position: absolute;
+    display: block;
+  }
+  .slider2 {
+    height: 94px;
+    margin-top: 282px;
+    width: 76px;
+    margin-left: 126px;
+    position: absolute;
+    display: block;
+  }
+  .product-grid{
+	  height: 200px;
+  }
+}
+/* Nexus 4 */
+@media only screen and (min-device-width: 384px) and (max-device-width: 640px) {
+  .text-center-mobile {
+    top: 1px;
+  }
+  .slider1 {
+    height: 94px;
+    margin-top: 184px;
+    width: 76px;
+    margin-left: 140px;
+    position: absolute;
+    display: block;
+  }
+  .slider2 {
+    height: 94px;
+    margin-top: 293px;
+    width: 76px;
+    margin-left: 138px;
+    position: absolute;
+    display: block;
+  }
+}
+/*  Pixel2  */
+@media only screen and (min-device-width: 411px) and (max-device-height: 823px) {
+  .product-grid-home {
+    height: 240px;
+  }
+  .mobile-h1 {
+    font-size: 17px;
+  }
+  .own-link {
+    font-size: 30px;
+  }
+  .own-magic {
+    font-size: 17px;
+  }
+  .btm-head {
+    height: 260px;
+  }
+  .btm-text {
+    font-size: 15px;
+  }
+  .inside-gift-container {
+    margin-top: 10.5em;
+    padding: 0px;
+  }
+  .head-size {
+    font-size: 16px;
+    text-align: center;
+  }
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner .desc{
+    /* height: 200px; */
+  }
+  .desc-gift {
+    padding: 0px 20px 0px 14px;
+    font-size: 11px;
+  }
+/*  .fh5co-nav-toggle {
+    top: 7px;
+  }*/
+  .fh5co-nav a {
+    padding: 0px;
+  }
+  .logo-style {
+    padding-left: 0px;
+    /* margin-top: -10px;
+    margin-bottom: -10px; */
+  }
+  .text-center-mobile {
+    /*top: 9px;*/
+  }
+  .fh5co-nav {
+    padding: 10px 0;
+  }
+  .fix-image {
+    width: 100%;
+    height: 450px;
+  }
+  .slider1 {
+    height: 94px;
+    margin-top: 203px;
+    width: 76px;
+    margin-left: 150px;
+    position: absolute;
+    display: block;
+  }
+  .slider2 {
+    height: 94px;
+    margin-top: 321px;
+    width: 76px;
+    margin-left: 150px;
+    position: absolute;
+    display: block;
+  }
+}
+/*  Pixel2  */
+@media only screen and (min-device-width: 411px) and (max-device-height: 731px) {
+  /* Styles */
+  .product-grid-home {
+    height: 240px;
+  }
+  .mobile-h1 {
+    font-size: 17px;
+  }
+  .own-link {
+    font-size: 30px;
+  }
+  .own-magic {
+    font-size: 17px;
+  }
+  .btm-head {
+    height: 260px;
+  }
+  .btm-text {
+    font-size: 15px;
+  }
+  .inside-gift-container {
+    margin-top: 10.5em;
+    padding: 0px;
+  }
+  .head-size {
+    font-size: 16px;
+    text-align: center;
+  }
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner .desc{
+    /* height: 200px; */
+  }
+  .desc-gift {
+    padding: 0px 20px 0px 14px;
+    font-size: 11px;
+  }
+  /*.fh5co-nav-toggle {
+    top: 7px;
+  }*/
+  .fh5co-nav a {
+    padding: 0px;
+  }
+  .logo-style {
+    padding-left: 0px;
+    /* margin-top: -10px; */
+  }
+  .fix-image {
+    width: 100%;
+    height: 450px;
+  }
+  .slider1 {
+    height: 94px;
+    margin-top: 202px;
+    width: 76px;
+    margin-left: 153px;
+    position: absolute;
+    display: block;
+  }
+  .slider2 {
+    height: 94px;
+    margin-top: 320px;
+    width: 76px;
+    margin-left: 150px;
+    position: absolute;
+    display: block;
+  }
+}
+/* nokia n9 */
+@media only screen and (min-device-width: 480px) and (max-device-height: 854px) /* and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) */ {
+  .fix-image {
+    width: 100%;
+    height: 600px;
+  }
+  .slider1 {
+    height: 94px;
+    margin-top: 240px;
+    width: 76px;
+    margin-left: 185px;
+    position: absolute;
+    display: block;
+  }
+  .slider2 {
+    height: 94px;
+    margin-top: 378px;
+    width: 76px;
+    margin-left: 185px;
+    position: absolute;
+    display: block;
+  }
+}
+/* Nexus 5x ----------- */
+@media only screen and (min-device-width: 412px) and (max-device-height: 732px) /* and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) */ {
+  .btm-head {
+    position: relative;
+    height: 265px;
+  }
+  .mobile-h1 {
+    font-size: 17px;
+  }
+  .own-link {
+    font-size: 30px;
+    color: black;
+    text-decoration: underline;
+    text-decoration-thickness: from-font;
+  }
+  .own-magic {
+    margin-top: 36px;
+    font-size: 17px;
+  }
+  .btm-text {
+    font-size: 15px;
+  }
+  #fh5co-counter .icon {
+    height: 90px;
+    width: 90px;
+  }
+  #fh5co-counter .counter-label {
+    text-decoration-thickness: from-font;
+    text-decoration: underline;
+  }
+  #fh5co-counter .feature-center {
+    padding: 0px;
+    background: none;
+  }
+  .inside-gift-container {
+    margin-top: 10em;
+    padding: 0px;
+  }
+  .head-size {
+    font-size: 16px;
+    text-align: center;
+  }
+  .desc-gift {
+    padding: 0px 20px 0px 14px;
+    font-size: 13px;
+  }
+  .fh5co-nav-toggle {
+    /* top: 10px; */
+  }
+  .fh5co-nav {
+    /* padding: 10px 0; */
+  }
+  .fh5co-nav a {
+    padding: 0px;
+  }
+  .logo-style {
+    padding-left: 0px;
+  }
+  .text-center-mobile {
+    text-align: center;
+    /*top: 9px;*/
+  }
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner .desc {
+    padding: 10px 10px 0px 10px;
+  }
+  .fix-image {
+    width: 100%;
+    height: 430px;
+  }
+  .slider1 {
+    height: 94px;
+    margin-top: 201px;
+    width: 76px;
+    margin-left: 150px;
+    position: absolute;
+    display: block;
+  }
+  .slider2 {
+    height: 94px;
+    margin-top: 318px;
+    width: 76px;
+    margin-left: 150px;
+    position: absolute;
+    display: block;
+  }
+  .product-grid {
+    height: 210px;
+  }
+}
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
+
+/* ipad width */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .inside-gift-container {
+    margin-top: 14em !important;
+  }
+  .desc-gift {
+    font-size: 16px;
+    padding: 0px 25px 0px 0px;
+  }
+  .product-grid{
+    /*height: 450px !important;*/
+  }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 960px) /* and (orientation: portrait) */ {
+  .mobile-h1 {
+    font-size: 22px;
+    letter-spacing: 0.5px;
+  }
+  .own-link {
+    font-size: 35px;
+    letter-spacing: 0px;
+    margin-top: 20px;
+  }
+  .own-magic {
+    margin-top: 20px;
+    font-size: 22px;
+  }
+  .btm-head {
+    position: relative;
+    height: 465px;
+  }
+  .btm-text {
+    font-size: 17px;
+  }
+  .product-grid-home {
+    height: 330px;
+  }
+  .inside-gift-container {
+    margin-top: 11em;
+  }
+  .fh5co-nav {
+    padding: 10px 0;
+  }
+  .fh5co-nav a {
+    padding: 0px;
+  }
+  .logo-style {
+    padding-left: 0px;
+  }
+  .text-center-mobile {
+    text-align: center;
+  }
+  #fh5co-counter .counter-label {
+    text-decoration-thickness: from-font;
+    text-decoration: underline;
+  }
+  #fh5co-counter .feature-center {
+    padding: 0px;
+    background: none;
+  }
+  .slider1 {
+    height: 94px;
+    margin-top: 276px;
+    width: 76px;
+    margin-left: 203px;
+    position: absolute;
+    display: block;
+  }
+  .slider2 {
+    height: 94px;
+    margin-top: 433px;
+    width: 76px;
+    margin-left: 203px;
+    position: absolute;
+    display: block;
+  }
+  .product-grid {
+    /*height: 310px;*/
+  }
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner .desc {
+    padding: 20px;
+    /* height: 200px; */
+    font-size: 18px;
+  }
+  .productName{
+    font-size: 18px;
+  }
+}
+@media only screen and (min-device-width: 800px) and (max-device-width: 1280px) {
+  .home-own-head {
+    left: 0;
+  }
+  .btm-head {
+    position: relative;
+    height: 615px;
+  }
+}
+
+@media only screen and (min-device-width: 280px) and (max-device-width: 318px) {
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+}
+
+@media only screen and (min-device-width: 540px) and (max-device-width: 719px) {
+}
+@media only screen and (min-width: 991px) and (max-width: 1200px) {
+  .inside-gift-container {
+    margin-top: 5.9em;
+  }
+}
+/* @media only screen and (min-width: 768px) and (max-width: 990px) {
+  .inside-gift-container {
+    margin-top: 3.6em;
+  }
+  .head-size {
+    font-size: 24px;
+  }
+} */
+/*@media (max-width: 384px){
+  .text-center-mobile {
+    top: 0;
+  }
+}*/
+@media (max-width 700px){
+  .home-own-head{
+    margin-top: 40px!important;
+    top: 174px;}
+}
