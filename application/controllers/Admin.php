@@ -51,13 +51,7 @@ class Admin extends CI_Controller
     public function index()
     {
         $data['title'] = ucfirst('Login');
-        $data['pagename'] = 'admin/auth/login';
-        // $data['content'] = $this->load->view('admin/auth/login');
-        return $this->load->view('admin/layouts/master', $data);
-        return $this->load->view('admin/templates/main_layout');
-        $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/auth/login', $data);
-        $this->load->view('admin/templates/footer', $data);
     }
 
     // authentication and show dashboard method
