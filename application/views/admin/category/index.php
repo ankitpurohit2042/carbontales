@@ -7,7 +7,7 @@
                         <p class="mt-4 d-inline">
                             <?php echo $title; ?>
                         </p>
-                        <a href="<?=site_url('admin/category/create')?>" style="float: right;" class="btn btn-light active" role="button" aria-disabled="true">Add Product</a>
+                        <a href="<?=site_url('admin/category/create')?>" style="float: right;" class="btn btn-light active" role="button" aria-disabled="true">Add Category</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -39,7 +39,5 @@
                     </div>
             </div>
         </div>
-
     </div>
-
 </div>

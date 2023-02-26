@@ -52,7 +52,7 @@ class Admin extends CI_Controller
     {
         if ($this->session->userdata('logged_in') === TRUE) {
             $data['title'] = ucfirst('Dashboard');
-            $this->dashboard();
+            return $this->dashboard();
         }
         $data['title'] = ucfirst('Login');
         $this->load->view('admin/auth/login', $data);
