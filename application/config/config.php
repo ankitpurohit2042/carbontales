@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://carbontales.local/';
+$config['base_url'] = 'http://carbontales.com/';
+$config['admin_base_url'] = 'http://carbontales.com/admin';
 
 
 /*

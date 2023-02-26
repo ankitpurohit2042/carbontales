@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="<?php echo site_url('admin/category/save') ?>" method="post">
+    <form action="<?php echo site_url('admin/category/save') ?>" method="post" id="createCategorForm">
         <div class="mt-2">
             <h2>
                 <?php echo isset($title) ? $title : '' ?>
@@ -28,7 +28,19 @@
     </form>
 </div>
 <script>
-    $(document).ready(function(){
+    $("#createCategorForm").validate({
+        rules:{
+            categoryName:{
+                required: true
+            }
+        },
+        messages:{
+            categoryName:{
+                required: "Please enter category name."
+            }
+        }
+    })
+    /*$(document).ready(function(){
         $("#addCategory").click(function(){
             var categoryName = $('#categoryName').val();
             var check = true;
@@ -39,5 +51,5 @@
             }
             return check;
         })
-    })
+    })*/
 </script>

@@ -39,7 +39,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						Sorry, <?php echo $message; ?>
 					</div>
 					<div class="error-actions">
-						<a href="<?php echo config_item('base_url') ?>" class="btn btn-primary btn-lg">
+						<a href="<?php echo config_item('admin_base_url') ?>" class="btn btn-primary btn-lg">
 							<span class="glyphicon glyphicon-home"></span> Back To Home
 						</a>
 					</div>
