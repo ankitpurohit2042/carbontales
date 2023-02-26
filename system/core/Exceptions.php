@@ -116,7 +116,7 @@ class CI_Exceptions {
 	 * @param 	bool	$log_error	Whether to log the error
 	 * @return	void
 	 */
-	public function show_404($page = '', $log_error = TRUE)
+	public function show_404($page = '', $log_error = TRUE, $heading, $message)
 	{
 		if (is_cli())
 		{
@@ -125,8 +125,10 @@ class CI_Exceptions {
 		}
 		else
 		{
-			$heading = '404 Page Not Found';
-			$message = 'The page you requested was not found.';
+			$heading = $heading;
+			$message = $message;
+			/* $heading = '404 Page Not Found';
+			$message = 'The page you requested was not found.'; */
 		}
 
 		// By default we log this, but allow a dev to skip it

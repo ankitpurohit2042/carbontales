@@ -50,6 +50,10 @@ class Admin extends CI_Controller
     // login method
     public function index()
     {
+        if ($this->session->userdata('logged_in') === TRUE) {
+            $data['title'] = ucfirst('Dashboard');
+            $this->dashboard();
+        }
         $data['title'] = ucfirst('Login');
         $this->load->view('admin/auth/login', $data);
     }
