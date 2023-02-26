@@ -50,7 +50,8 @@
                                     <span class="text-danger passwordErrorMsg"></span>
                                  </div>
                                  <div class="form-group" style="float: right">
-                                    <button type="submit"  class="btn btn-primary" id="login">Login</button>
+                                    <input type="submit" class="btn btn-primary" name="" value="Login">
+                                    <!-- <button type="submit"  class="btn btn-primary" id="login">Login</button> -->
                                  </div>
                               </form>
                            </div>
@@ -108,10 +109,10 @@
 </script> -->
 <script>
 // just for the demos, avoids form submit
-jQuery.validator.setDefaults({
+/*jQuery.validator.setDefaults({
   debug: true,
   success: "valid"
-});
+});*/
 $( "#loginForm" ).validate({
    rules: {
       email: {
