@@ -68,7 +68,7 @@ $route['product/(:num)'] = 'product/viewProduct/$1';
 
 $route['enquiry'] = 'enquiry';
 
-$route['/admin/dashboard'] = 'admin/dashboard';
+$route['admin/dashboard'] = 'BackendController/Dashboard';
 
 
 $route['/admin/changeHomeText'] = 'admin/changeHomeText';

@@ -62,22 +62,10 @@ class Admin extends CI_Controller
     public function dashboard()
     {
         if ($this->session->userdata('logged_in') === TRUE) {
+            return redirect('admin/dashboard');
             $fname = $this->session->userdata('fname');
             $lname = $this->session->userdata('lname');
 
-            $data['feedbackTitle'] = "Feedback";
-            $data['feedbackCount'] = $this->feedback->getFeedbackCount();
-            $data['aboutTitle'] = "About Us";
-            $data['aboutCount'] = $this->about->getAboutCount();
-            $data['pendantTitle'] = "Pendant";
-            $data['pendantCount'] = $this->pendant->getPendantCount();
-            $data['contactUsTitle'] = "Contact Us";
-            $data['contactUsCount'] = $this->contact->getContactCount();
-
-            $data['title'] = ucfirst($fname . ' ' . $lname);
-            $this->load->view('admin/templates/dashboard_header', $data);
-            $this->load->view('admin/dashboard', $data);
-            $this->load->view('admin/templates/dashboard_footer', $data);
         } else {
             $email = $this->input->post('email', TRUE);
             $password = md5($this->input->post('password', TRUE));
