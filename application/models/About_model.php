@@ -1,24 +1,27 @@
 <?php
-if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+if (!defined('BASEPATH')) {
+    exit('No direct script access allowed');
+}
 
-class About_model extends CI_Model{
+class About_model extends CI_Model
+{
 
- public function __construct()
+    public function __construct()
     {
         parent::__construct();
         $this->load->model('About_model');
     }
-    public function get_About(){
-        if(!empty($this->input->get("search"))){
-          $this->db->like('heading', $this->input->get("search"));
+    public function get_About()
+    {
+        if (!empty($this->input->get("search"))) {
+            $this->db->like('heading', $this->input->get("search"));
         }
         $query = $this->db->get("about");
         return $query->result();
     }
 
-
     public function insert_item()
-    {    
+    {
         $data = array(
             'heading' => $this->input->post('heading'),
             'description' => $this->input->post('description'),
@@ -26,34 +29,32 @@ class About_model extends CI_Model{
         return $this->db->insert('about', $data);
     }
 
-
-    public function update_item($id) 
-    {	
-        $data=array(
+    public function update_item($id)
+    {
+        $data = array(
             'heading' => $this->input->post('heading'),
-            'description' => $this->input->post('description')
+            'description' => $this->input->post('description'),
         );
-        if($id==0){
-            return $this->db->insert('about',$data);
-        }else{
-            $this->db->where('about_id',$id);
-            return $this->db->update('about',$data);
-        }        
+        if ($id == 0) {
+            return $this->db->insert('about', $data);
+        } else {
+            $this->db->where('about_id', $id);
+            return $this->db->update('about', $data);
+        }
     }
 
-
-   public function find_item_by_id($id)
+    public function find_item_by_id($id)
     {
         return $this->db->get_where('about', array('about_id' => $id))->row();
     }
-
 
     public function delete_item($id)
     {
         return $this->db->delete('about', array('about_id' => $id));
     }
 
-    public function getContent(){
+    public function getContent()
+    {
         $query = $this->db->get("about");
         return $query->result();
     }
@@ -64,4 +65,3 @@ class About_model extends CI_Model{
         return $query->num_rows();
     }
 }
-?>

@@ -434,10 +434,10 @@ if ( ! function_exists('show_404'))
 	 * @param	bool
 	 * @return	void
 	 */
-	function show_404($page = '', $log_error = TRUE)
+	function show_404($page = '', $log_error = TRUE, $headings = '404 Page Not Found', $messages = "The page you requested was not found.")
 	{
 		$_error =& load_class('Exceptions', 'core');
-		$_error->show_404($page, $log_error);
+		$_error->show_404($page, $log_error, $headings, $messages);
 		exit(4); // EXIT_UNKNOWN_FILE
 	}
 }

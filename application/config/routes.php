@@ -51,6 +51,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 $route['admin'] = 'admin';
+/**Category Routing */
+$route['admin/category'] = 'BackendController/Category';
+$route['admin/category/create'] = 'BackendController/Category/create';
+$route['admin/category/save']['post'] = 'BackendController/Category/save';
+$route['admin/category/edit/(:any)']['get'] = 'BackendController/Category/edit/$1';
+$route['admin/category/update/(:any)']['post'] = 'BackendController/Category/update/$1';
+
 $route['product'] = 'product';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
