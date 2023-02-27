@@ -50,6 +50,16 @@ class Admin extends CI_Controller
     // login method
     public function index()
     {
+        // var_dump($this->session->userdata('logged_in')); die;
+        if ($this->session->userdata('logged_in')) {
+            $data['title'] = ucfirst('Dashboard');
+            return redirect('admin/dashboard');
+        }else{
+            return redirect('/admin/login');
+        }
+        
+        
+
         if ($this->session->userdata('logged_in') === TRUE) {
             $data['title'] = ucfirst('Dashboard');
             return $this->dashboard();
@@ -61,12 +71,14 @@ class Admin extends CI_Controller
     // authentication and show dashboard method
     public function dashboard()
     {
+        die("Xdf");
         if ($this->session->userdata('logged_in') === TRUE) {
             return redirect('admin/dashboard');
             $fname = $this->session->userdata('fname');
             $lname = $this->session->userdata('lname');
 
         } else {
+            die("XDFGg");
             $email = $this->input->post('email', TRUE);
             $password = md5($this->input->post('password', TRUE));
             $validate = $this->login_model->validate($email, $password);
