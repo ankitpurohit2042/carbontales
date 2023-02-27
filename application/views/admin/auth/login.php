@@ -31,7 +31,7 @@
                               <h3 class="text-center font-weight-light my-4">Login</h3>
                            </div>
                            <div class="card-body">
-                              <form action="<?=base_url('admin/dashboard')?>" method="POST" id="loginForm">
+                              <form action="<?=base_url('admin/login/save')?>" method="POST" id="loginForm">
                                  <span class="text-danger">
                                  <?php echo $this->session->flashdata('msg'); ?>
                                  </span>

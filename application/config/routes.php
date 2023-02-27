@@ -51,6 +51,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 $route['admin'] = 'admin';
+
+/** Auth Routing */
+$route['admin/login'] = 'BackendController/AuthController/LoginController';
+$route['admin/login/save']['post'] = 'BackendController/AuthController/LoginController/authenticated';
+
 /**Category Routing */
 $route['admin/category'] = 'BackendController/Category';
 $route['admin/category/create'] = 'BackendController/Category/create';
