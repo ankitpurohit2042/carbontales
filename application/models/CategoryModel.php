@@ -38,7 +38,7 @@ class CategoryModel extends CI_Model
         if ($row) {
             return $row;
         } else {
-            echo 'No record found.';
+           return false;
         }
 
     }
@@ -58,5 +58,14 @@ class CategoryModel extends CI_Model
         } else {
             echo 'Data update failed.';
         }
+    }
+
+    public function delete($id) {
+        $data = $this->db->where('id', $id);
+        if($data){
+            $this->db->delete('categories');
+            return true;
+        }
+        return false;
     }
 }

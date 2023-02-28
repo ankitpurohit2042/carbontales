@@ -13,8 +13,13 @@
                 <div class="card-body">
                     <div class="text-success">
                         <?php if ($this->session->flashdata('success_msg')) {
-    echo $this->session->flashdata('success_msg');
-}?>
+                            echo $this->session->flashdata('success_msg');
+                        }?>
+                    </div>
+                    <div class="text-danger">
+                        <?php if ($this->session->flashdata('error_msg')) {
+                            echo $this->session->flashdata('error_msg');
+                        }?>
                     </div>
                         <div class="table-responsive">
                             <table class="table table-bordered" id="feedback" width="100%" cellspacing="0">
@@ -50,26 +55,17 @@
         e.preventDefault();
         var url = $(this).attr('href');
         Swal.fire({
-                        title: "{{__('Are you sure?')}}",
-                        text: "{{__('You wont be able to revert this!')}}",
-                        type: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: "{{__('Yes, delete !')}}" 
-                        }).then((result) => {
-                            if (result.value) {
-                               alert("xdf");
-                            }else{
-                                Swal.fire({
-                                    type: 'success',
-                                    title: 'Data is safe.',
-                                    showConfirmButton: false,
-                                    toast: true,
-                                    position: 'center',
-                                    timer: 5000
-                                });
-                            }
-                    })
+            title: "Are you sure?",
+            text: "You wont be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.value) {
+                window.location.href = url;
+            }
+        })
     });
 </script>
