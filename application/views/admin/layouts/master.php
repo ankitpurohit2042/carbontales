@@ -13,6 +13,10 @@
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+        <!-- SweetAlert LIB -->
+        <link href="http://tracking-system/plugins/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
+        <script src="http://tracking-system/plugins/sweetalert2/dist/sweetalert2.all.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script> -->
         <style type="text/css">
             .error{
                 color:  red;

@@ -13,8 +13,8 @@
                 <div class="card-body">
                     <div class="text-success">
                         <?php if ($this->session->flashdata('success_msg')) {
-                            echo $this->session->flashdata('success_msg');
-                        }?>
+    echo $this->session->flashdata('success_msg');
+}?>
                     </div>
                         <div class="table-responsive">
                             <table class="table table-bordered" id="feedback" width="100%" cellspacing="0">
@@ -26,13 +26,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach($data as $key => $value){ ?>
+                                    <?php foreach ($data as $key => $value) {?>
                                         <tr>
                                             <td><?php echo $value->sno ?></td>
                                             <td><?php echo $value->category_name ?></td>
-                                            <td><a href="<?php echo site_url('admin/category/edit/'.$this->encryption->encrypt($value->id)) ?>" class="btn-sm btn-primary">Edit</a></td>
+                                            <td>
+                                                <a href="<?php echo site_url('admin/category/edit/' . $this->encryption->encrypt($value->id)) ?>" class="" title="Edit"><i class="far fa-edit text-link"></i></a>
+                                                <a href="<?php echo site_url('admin/category/delete/' . $this->encryption->encrypt($value->id)) ?>" class="delete-btn" title="Delete"><i class="far fa-trash-alt text-danger"></i></a>
+                                            </td>
                                         </tr>
-                                    <?php } ?>
+                                    <?php }?>
                                 </tbody>
                             </table>
                         </div>
@@ -41,3 +44,32 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).on('click', '.delete-btn', function (e) {
+        e.preventDefault();
+        var url = $(this).attr('href');
+        Swal.fire({
+                        title: "{{__('Are you sure?')}}",
+                        text: "{{__('You wont be able to revert this!')}}",
+                        type: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: "{{__('Yes, delete !')}}" 
+                        }).then((result) => {
+                            if (result.value) {
+                               alert("xdf");
+                            }else{
+                                Swal.fire({
+                                    type: 'success',
+                                    title: 'Data is safe.',
+                                    showConfirmButton: false,
+                                    toast: true,
+                                    position: 'center',
+                                    timer: 5000
+                                });
+                            }
+                    })
+    });
+</script>
