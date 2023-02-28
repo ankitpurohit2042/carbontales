@@ -13,6 +13,9 @@
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+        <!-- SweetAlert LIB -->
+        <link href="https://stagfcctsadmin.devpress.net/plugins/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
+        <script src="https://stagfcctsadmin.devpress.net/plugins/sweetalert2/dist/sweetalert2.all.min.js"></script>
         <style type="text/css">
             .error{
                 color:  red;

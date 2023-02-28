@@ -92,7 +92,7 @@ class Category extends CI_Controller
                 $pageData = ['title' => 'Category', 'pagename' => 'admin/category/create'];
                 $this->session->set_flashdata('error', validation_errors());
 
-                return redirect('admin/category/edit/'.$this->encryption->encrypt($id));
+                return redirect('admin/category/edit/' . $this->encryption->encrypt($id));
             }
             $data = ['category_name' => $categoryName];
             $data = $this->CategoryModel->updateCategoryData($id, $data);
@@ -101,5 +101,22 @@ class Category extends CI_Controller
             return redirect('admin/category');
         }
         show_404('error_404', false, 'Category Not Found', 'This Category is not found in our system.');
+    }
+
+    /**
+     * Delete category function
+     */
+    public function delete($id)
+    {
+        $id = $this->encryption->decrypt($id);
+        $data = $this->CategoryModel->getCategoryDetail($id);
+        if ($data) {
+            $this->CategoryModel->delete($id);
+            // Show success message and redirect
+            $this->session->set_flashdata('success_msg', 'Category deleted successfully.');
+            return redirect('admin/category');
+        }
+        $this->session->set_flashdata('error_msg', 'Category not found!');
+        return redirect('admin/category');
     }
 }

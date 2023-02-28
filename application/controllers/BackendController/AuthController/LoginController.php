@@ -27,17 +27,16 @@ class LoginCOntroller extends CI_Controller
      */
     public function authenticated()
     {
-        echo $username = $this->input->post('email');
-        echo $password = $this->input->post('password');
+        $username = $this->input->post('email');
+        $password = $this->input->post('password');
 
         if ($this->login_model->login($username, $password)) {
-            redirect('admin/dashboard');
+            return redirect('admin/dashboard');
         } else {
             // Login failed
             $this->session->set_flashdata('error_msg', 'Invalid username or password.');
-            redirect('login');
+            return redirect('login');
         }
-        die();
         if ($user->status == 'Inactive') {
             // Log the user out.
             $this->logout($request);
