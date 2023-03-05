@@ -82,6 +82,7 @@ class Category extends CI_Controller
      */
     public function update($id)
     {
+        $id = $this->uri->segment(4);
         $id = $this->encryption->decrypt($id);
         if ($id) {
             $categoryName = $this->input->post('categoryName');
@@ -106,16 +107,19 @@ class Category extends CI_Controller
     /**
      * Delete category function
      */
-    public function delete($id)
+    public function delete()
     {
-        $id = $this->encryption->decrypt($id);
-        $data = $this->CategoryModel->getCategoryDetail($id);
+        die($this->uri->segment(4));
+        $dataId = $this->encryption->decrypt($id);
+        $data = $this->CategoryModel->getCategoryDetail($dataId);
         if ($data) {
+            die("if");
             $this->CategoryModel->delete($id);
             // Show success message and redirect
             $this->session->set_flashdata('success_msg', 'Category deleted successfully.');
             return redirect('admin/category');
         }
+        die("else");
         $this->session->set_flashdata('error_msg', 'Category not found!');
         return redirect('admin/category');
     }
