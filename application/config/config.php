@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://carbontales.com/';
-$config['admin_base_url'] = 'http://carbontales.com/admin';
+$config['base_url'] = 'http://carbontales.local/';
+$config['admin_base_url'] = 'http://carbontales.local/admin';
 
 
 /*
@@ -328,7 +328,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '1';
+$config['encryption_key'] = '1sdslsD';
 
 /*
 |--------------------------------------------------------------------------
